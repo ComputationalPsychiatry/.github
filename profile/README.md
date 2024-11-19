@@ -1,0 +1,3 @@
+TAPAS is a collection of software tools intended to support the development of computational assays (Translational Neuromodeling) and their clinical application in Computational Psychiatry, Neurology and Psychosomatics.
+For a general overview of the TAPAS toolbox suite, including its mission, please refer to:
+- Frässle, Stefan et al. "TAPAS: An Open-Source Software Package for Translational Neuromodeling and Computational Psychiatry". *Frontiers in Psychiatry* 12 (2021). [https://doi.org/10.3389/fpsyt.2021.680811](https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.680811/full).
