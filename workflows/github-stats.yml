@@ -1,0 +1,28 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run once a week
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run GitHub Stats Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+        run: python script.py
