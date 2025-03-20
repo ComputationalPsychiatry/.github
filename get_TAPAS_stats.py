@@ -70,6 +70,10 @@ for repo in repos:
     else:
         print(f"Repo: {repo_name} - Release data unavailable (requires admin access)")
 
+    license = "None"
+    if repo['license'] is not None:
+        license = repo['license']['spdx_id']
+
     # remove old data
     accumulated_data[repo_name] = []
     
@@ -79,7 +83,10 @@ for repo in repos:
         'downloads': download_count,
         'stargazers': repo['stargazers_count'],
         'forks': repo['forks_count'],
-        'open_issues': repo['open_issues_count']
+        'open_issues': repo['open_issues_count'],
+        'language': repo['language'],
+        'watchers': repo['watchers_count'],
+        'license': license
     })
 
 # Update the Gist with the new data
