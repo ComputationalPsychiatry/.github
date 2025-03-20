@@ -25,4 +25,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
-        run: python get_Tapas_stats.py
+        run: python ../get_Tapas_stats.py
