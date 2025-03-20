@@ -2,7 +2,7 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Run once a week
+    - cron: '30 2 1,15 * *'  # Run on 1st and 15th of every month, roughly every two weeks
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
