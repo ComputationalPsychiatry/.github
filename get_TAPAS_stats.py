@@ -33,6 +33,8 @@ repos = repos_response.json()
 total_stars = sum(repo['stargazers_count'] for repo in repos)
 total_forks = sum(repo['forks_count'] for repo in repos)
 total_issues = sum(repo['open_issues_count'] for repo in repos)
+total_downloads = 0
+total_clones_new = 0
 
 for repo in repos:
     repo_name = repo['name']
@@ -69,6 +71,9 @@ for repo in repos:
                 download_count += asset['download_count']
     else:
         print(f"Repo: {repo_name} - Release data unavailable (requires admin access)")
+
+    total_downloads += download_count
+    total_clones_new += clones_unique
 
     license = "None"
     if repo['license'] is not None:
@@ -109,3 +114,5 @@ else:
 print(f"Total Stars: {total_stars}")
 print(f"Total Forks: {total_forks}")
 print(f"Total Issues: {total_issues}")
+print(f"Total Downloads: {total_downloads}")
+print(f"Total new clones: {total_clones_new}")
