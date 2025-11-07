@@ -4,11 +4,6 @@ on:
     - cron: "0 0 * * 0"
   workflow_dispatch:  # Allows manual triggering
 jobs:
-  main-job:
-    name: Main Job
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
   keepalive-job:
     name: Keepalive Workflow
     runs-on: ubuntu-latest
